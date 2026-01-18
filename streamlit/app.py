@@ -327,4 +327,64 @@ if audio_file:
 
         severity_map = {0: "Low", 1: "Medium", 2: "High"}
         severity_colors = {0: "🟢", 1: "🟡", 2: "🔴"}
-        severity_weights = {0: 0.2, 1: 0.5, 2: 0.9}    
+        severity_weights = {0: 0.2, 1: 0.5, 2: 0.9} 
+
+        # STEP 5: Risk Tier Calculation
+        for idx, (drug, pred, prob) in enumerate(zip(entities["drugs"], preds, proba)):
+            severity = severity_map.get(pred, "Unknown")
+            severity_icon = severity_colors.get(pred, "⚪")
+            severity_score = severity_weights.get(pred, 0.5)
+            confidence = prob[pred] * 100
+
+            avg_severity = severity_score
+            num_reactions = len(entities.get("reactions", []))
+            drug_frequency = np.random.randint(1, 3)
+            is_primary_suspect = 1 if idx == 0 else 0
+
+            reaction_factor = min(num_reactions / 3, 1.0)
+            drug_freq_factor = min(drug_frequency / 3, 1.0)
+
+            risk_score = (
+                avg_severity * 0.6 +
+                reaction_factor * 0.25 +
+                is_primary_suspect * 0.1 +
+                drug_freq_factor * 0.05
+            )
+            risk_score = min(max(risk_score, 0), 1)
+            risk_percentage = int(risk_score * 100)
+
+            if risk_score < 0.4:
+                tier = "🟢 Safe"
+                message = "Low likelihood of adverse event – continue regular monitoring."
+            elif risk_score < 0.7:
+                tier = "🟡 Monitor Closely"
+                message = "Moderate risk detected – monitor patient closely for new symptoms."
+            else:
+                tier = "🔴 Immediate Intervention Required"
+                message = "High likelihood of adverse event – intervene immediately."
+
+            st.divider()
+            st.markdown(f"### {severity_icon} {drug}")
+            st.metric("Predicted Severity", severity)
+            st.metric("Confidence", f"{confidence:.1f}%")
+            st.markdown(f"**Risk Tier:** {tier}")
+            st.progress(risk_score)
+            st.caption(f"Computed Risk Score: **{risk_score:.2f}** — {message}")
+
+            prob_df = pd.DataFrame({
+                'Severity': ['Low', 'Medium', 'High'],
+                'Probability': [prob[0], prob[1], prob[2]]
+            })
+            st.bar_chart(prob_df.set_index('Severity'), height=200)
+
+    except Exception as e:
+        st.error(f"❌ An error occurred: {str(e)}")
+        import traceback
+        with st.expander("View error details"):
+            st.code(traceback.format_exc())
+
+    finally:
+        if os.path.exists(audio_path):
+            os.unlink(audio_path)
+
+# <<------------------------------->>   
