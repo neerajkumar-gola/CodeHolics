@@ -303,3 +303,15 @@ if audio_file:
             st.metric("Reactions Found", len(entities.get("reactions", [])))
             for react in entities.get("reactions", []):
                 st.warning(f"⚠️ {react}")
+
+                # STEP 3: Feature Engineering
+        with st.spinner("⚙️ Building model features..."):
+            feature_rows = build_features(entities)
+
+        if not feature_rows:
+            st.error("❌ No valid drugs detected in recognized list.")
+            st.stop()
+
+        X = pd.DataFrame(feature_rows)[FEATURE_ORDER]
+        with st.expander("📋 View Feature Matrix"):
+            st.dataframe(X, use_container_width=True)
