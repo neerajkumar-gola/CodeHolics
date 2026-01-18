@@ -263,3 +263,43 @@ Upload a **medical conversation audio file** and let our AI-powered analyzer do 
 
 
 # <<------------------------------->>
+
+# Main Content
+
+audio_file = st.file_uploader("Select an audio file", type=["mp3", "wav", "m4a"])
+
+if audio_file:
+    st.audio(audio_file)
+
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp:
+        tmp.write(audio_file.read())
+        audio_path = tmp.name
+
+    try:
+        # STEP 1: Audio Transcription
+        with st.spinner("🎧 Transcribing audio..."):
+            segments, info = whisper_model.transcribe(audio_path)
+            transcript = " ".join([seg.text for seg in segments])
+
+        st.subheader("📝 Transcription")
+        with st.expander("View full transcript", expanded=True):
+            st.write(transcript)
+
+        # STEP 2: Entity Extraction
+        with st.spinner("🔍 Extracting medical entities..."):
+            entities = extract_entities(transcript)
+
+        st.subheader("💡 Extracted Entities")
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Drugs Found", len(entities.get("drugs", [])))
+            for drug in entities.get("drugs", []):
+                st.success(f"💊 {drug}")
+        with col2:
+            st.metric("Indications Found", len(entities.get("indications", [])))
+            for indi in entities.get("indications", []):
+                st.info(f"🏥 {indi}")
+        with col3:
+            st.metric("Reactions Found", len(entities.get("reactions", [])))
+            for react in entities.get("reactions", []):
+                st.warning(f"⚠️ {react}")
