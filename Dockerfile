@@ -18,7 +18,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project structure
-COPY streamlit_app/ ./streamlit_app/
+COPY app.py ./streamlit/app.py
 COPY models/ ./models/
 COPY data/ ./data/
 
@@ -36,4 +36,4 @@ ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
 
 # Run the Streamlit app
-CMD ["streamlit", "run", "streamlit_app/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "streamlit/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
