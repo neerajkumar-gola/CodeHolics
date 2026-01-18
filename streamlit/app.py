@@ -388,3 +388,8 @@ if audio_file:
             os.unlink(audio_path)
 
 # <<------------------------------->>   
+
+# Footer
+
+st.divider()
+st.caption("⚠️ Disclaimer: This tool is intended solely for research and educational purposes.It should not be used as a substitute for professional medical advice, diagnosis, or treatment.")
