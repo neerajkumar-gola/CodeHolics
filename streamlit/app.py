@@ -80,3 +80,17 @@ model, encoders, FEATURE_ORDER, PROD_AI_MAP, INDI_PT_MAP, PT_MAP, ROLE_COD_MAP =
 
 # <<------------------------------->>
 
+# Loads Whisper
+
+@st.cache_resource
+def load_whisper():
+    """Load Whisper model for audio transcription"""
+    try:
+        return WhisperModel("base", device="cpu", compute_type="int8")
+    except Exception as e:
+        st.error(f"❌ Error loading Whisper model: {str(e)}")
+        sys.exit(1)
+
+whisper_model = load_whisper()
+
+# <<------------------------------->>
