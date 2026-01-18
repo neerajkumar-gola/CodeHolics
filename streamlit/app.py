@@ -315,3 +315,16 @@ if audio_file:
         X = pd.DataFrame(feature_rows)[FEATURE_ORDER]
         with st.expander("📋 View Feature Matrix"):
             st.dataframe(X, use_container_width=True)
+            
+            
+        # STEP 4: Model Prediction
+        with st.spinner("🤖 Predicting severity..."):
+            preds = model.predict(X)
+            proba = model.predict_proba(X)
+
+        st.success("✅ Prediction Complete!")
+        st.subheader("📊 Severity Predictions & Risk Assessment")
+
+        severity_map = {0: "Low", 1: "Medium", 2: "High"}
+        severity_colors = {0: "🟢", 1: "🟡", 2: "🔴"}
+        severity_weights = {0: 0.2, 1: 0.5, 2: 0.9}    
