@@ -241,3 +241,25 @@ def build_features(entities):
     return rows
 
 # <<------------------------------->>
+
+# Streamlit UI
+
+st.set_page_config(page_title="Medical Audio Risk Detecter", layout="wide")
+# Header
+st.title("🩺 Medical Audio Risk Detecter")
+st.markdown("""
+### 🧠 How It Works  
+
+Upload a **medical conversation audio file** and let our AI-powered analyzer do the rest!  
+
+1️⃣ **🎧 Transcribe the audio** — Converts speech to accurate text using **OpenAI Whisper**.  
+2️⃣ **🧬 Extract medical entities** — Identifies **Drugs**, **Indications**, and **Reactions** with **Gemini AI**.  
+3️⃣ **📈 Predict adverse event severity** — Evaluates potential drug event seriousness via **XGBoost**.  
+4️⃣ **🚨 Classify overall risk tier** — Determines if intervention is needed: **Safe**, **Monitor**, or **Critical**.  
+
+---
+💡 *Built for pharmacovigilance research — combining NLP, machine learning, and clinical insights.*
+""")
+
+
+# <<------------------------------->>
