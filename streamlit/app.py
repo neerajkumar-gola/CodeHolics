@@ -198,3 +198,46 @@ def extract_entities(text):
         return {"drugs": [], "indications": [], "reactions": []}
 
 # <<------------------------------->>
+
+# Building Features using feature engineering
+
+def build_features(entities):
+    """Building feature matrix from extracted entities"""
+    rows = []
+    drug_stats = encoders["drug_stats"]
+
+    for drug in entities["drugs"]:
+        if drug not in PROD_AI_MAP:
+            continue
+
+        drug_id = str(PROD_AI_MAP[drug])
+        stats = drug_stats.get(drug_id, {})
+        
+        # Get first indication if available, else default to 0
+        indi_encoded = 0
+        if entities.get("indications") and len(entities["indications"]) > 0:
+            first_indication = entities["indications"][0]
+            if first_indication in INDI_PT_MAP:
+                indi_encoded = INDI_PT_MAP[first_indication]
+        
+        # role_cod: PS=2 (Primary Suspect) is the default
+        role_cod_encoded = 2  # 'PS' = Primary Suspect
+
+        rows.append({
+            "prod_ai_encoded": int(drug_id),
+            "indi_pt_encoded": indi_encoded,
+            "role_cod_encoded": role_cod_encoded,
+            "drug_frequency": stats.get("drug_frequency", 0),
+            "drug_avg_severity": stats.get("drug_avg_severity", 0.0),
+            "num_drugs": len(entities["drugs"]),
+            "num_reactions": len(entities.get("reactions", [])),
+            "treatment_duration": 0,  # Default - could be extracted from text
+            "dechal_binary": 0,
+            "is_primary_suspect": 1,
+            "is_secondary_suspect": 0,
+            "is_concomitant": 0
+        })
+
+    return rows
+
+# <<------------------------------->>
