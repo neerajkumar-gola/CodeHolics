@@ -1,0 +1,17 @@
+scikit-learn
+scipy
+requests
+matplotlibstreamlit
+faster-whisper
+langchain
+langchain-google-genai
+langchain-core
+python-dotenv
+google-generativeai
+pydantic
+xgboost
+pandas
+numpy
+pillow
+pyyaml
+streamlit
