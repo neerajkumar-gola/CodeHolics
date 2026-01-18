@@ -179,3 +179,22 @@ Valid Reactions:
 parser = JsonOutputParser()
 
 # <<------------------------------->>
+
+# Entity Extraction from the conversation
+
+def extract_entities(text):
+    """Extracting medical entities from text using Gemini LLM"""
+    try:
+        chain = prompt | llm | parser
+        entities = chain.invoke({
+            "conversation": text,
+            "drug_list": list(PROD_AI_MAP.keys()),
+            "indi_list": list(INDI_PT_MAP.keys()),
+            "pt_list": list(PT_MAP.keys())
+        })
+        return entities
+    except Exception as e:
+        st.error(f"❌ Error extracting entities: {str(e)}")
+        return {"drugs": [], "indications": [], "reactions": []}
+
+# <<------------------------------->>
