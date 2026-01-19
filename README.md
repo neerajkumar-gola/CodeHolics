@@ -125,9 +125,9 @@ QA Coverage:
 
 - USER INTERFACE
   
-<p align="center">
+
   <img src="assets/screenshot-homepage.png" width="800">
-</p>
+
 
 
 - USER CLICKS ON BROWSE FILES AND SELECT THE AUDIO FILE
