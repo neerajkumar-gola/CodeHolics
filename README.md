@@ -159,7 +159,7 @@ QA Coverage:
 - The Output is obtained telling the risk of occurrence of adverse event.
 
 <p align="center">
-  <img src="assets/screenshot-assessment.png" width="800">
+  <img src="assets/assessment.png" width="800">
 </p>
 
 <p align="center">
