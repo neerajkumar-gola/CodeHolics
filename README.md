@@ -89,11 +89,11 @@ Features:
 
 ### Figma Links : 
 
-**LOGO**: 
+**LOGO**:  
 
 **INFORMATION ARCHITECTURE**: 
 
-**INTERFACE SCREENS**: 
+**INTERFACE SCREENS**: [Link](https://www.figma.com/make/CrYAFS2rXvDIB7hLEyX0cQ/SCREENS--Community-?fullscreen=1&t=WjQCCGHAxiUIAtMQ-1)
 
 ### Data Source:
 - FAERS (FDA Adverse Event Reporting System)
