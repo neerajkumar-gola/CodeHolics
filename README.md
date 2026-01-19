@@ -88,17 +88,15 @@ Features:
 
 
 ### Figma Links : 
+ 
+**INFORMATION ARCHITECTURE**: [Architecture Pipeline](https://amity-rabbit-85650432.figma.site/)
 
-**LOGO**:  
-
-**INFORMATION ARCHITECTURE**: 
-
-**INTERFACE SCREENS**: [Link](https://www.figma.com/make/CrYAFS2rXvDIB7hLEyX0cQ/SCREENS--Community-?fullscreen=1&t=WjQCCGHAxiUIAtMQ-1)
+**INTERFACE SCREENS**: [Interface](https://www.figma.com/make/CrYAFS2rXvDIB7hLEyX0cQ/SCREENS--Community-?fullscreen=1&t=WjQCCGHAxiUIAtMQ-1)
 
 ### Data Source:
 - FAERS (FDA Adverse Event Reporting System)
 - We worked on Year: 2021 (Q1–Q4)
-- **Source**: [https://open.fda.gov/data/faers/](https://open.fda.gov/data/faers/)
+- **Source**: [FAERS DataBase](https://open.fda.gov/data/faers/)
 - FAERS Tables Used: DEMO : Patient demographics, DRUG : Drug information (Primary Suspect only),REAC : Adverse reactions, OUTC : Outcomes (death, hospitalization, etc.), INDI : Drug indications
 
 ### Data Pipeline:
@@ -163,4 +161,4 @@ QA Coverage:
 Made By:
 ### Team: CodeHolics
 YMCA - Batch of 2026
-(@Veersa Hackathon 2026)
+
