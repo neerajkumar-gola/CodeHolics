@@ -132,39 +132,29 @@ QA Coverage:
 
 - USER CLICKS ON BROWSE FILES AND SELECT THE AUDIO FILE
 
-<p align="center">
+
   <img src="assets/screenshot-upload-audio.png" width="800">
-</p>
+
 
 
 - PROCESSING STARTS - TRANSCRIPTION OF AUDIO (audio to text) and TRANSLATION (if audio is in another language it is converted to english)
 
-<p align="center">
   <img src="assets/screenshot-audio-analysis.png" width="800">
 </p>
 
-
-<p align="center">
   <img src="assets/screenshot-transcription.png" width="800">
-</p>
 
 
 - SYMPTOMS AND DRUGS ARE EXTRACTED
 
-<p align="center">
   <img src="assets/screenshot-transcription.png" width="800">
-</p>
 
 
 - The Output is obtained telling the risk of occurrence of adverse event.
 
-<p align="center">
   <img src="assets/assessment.png" width="800">
-</p>
 
-<p align="center">
   <img src="assets/screenshot-last.png" width="800">
-</p>
 
 
 
