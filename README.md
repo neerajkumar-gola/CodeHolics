@@ -33,7 +33,7 @@ We present an end-to-end AI-powered system that:
 ## 🧠 System Architecture
 
 <p align="center">
-  <img src="assets/architecture.png" width="800">
+  <img src="assets/architecture.png" width="270" height="584">
 </p>
 
 
