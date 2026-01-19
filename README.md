@@ -91,7 +91,7 @@ Features:
  
 **INFORMATION ARCHITECTURE**: [Architecture Pipeline](https://amity-rabbit-85650432.figma.site/)
 
-**INTERFACE SCREENS**: [Interface](https://www.figma.com/make/CrYAFS2rXvDIB7hLEyX0cQ/SCREENS--Community-?fullscreen=1&t=WjQCCGHAxiUIAtMQ-1)
+**INTERFACE SCREENS**: [Interface](https://quirky-cleat-87990483.figma.site/)
 
 ### Data Source:
 - FAERS (FDA Adverse Event Reporting System)
