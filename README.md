@@ -33,7 +33,7 @@ We present an end-to-end AI-powered system that:
 ## 🧠 System Architecture
 
 <p align="center">
-  <img src="assets/architecture.png" width="800">
+  <img src="assets/architecture.png" width="270" height="584">
 </p>
 
 
@@ -125,46 +125,36 @@ QA Coverage:
 
 - USER INTERFACE
   
-<p align="center">
+
   <img src="assets/screenshot-homepage.png" width="800">
-</p>
+
 
 
 - USER CLICKS ON BROWSE FILES AND SELECT THE AUDIO FILE
 
-<p align="center">
+
   <img src="assets/screenshot-upload-audio.png" width="800">
-</p>
+
 
 
 - PROCESSING STARTS - TRANSCRIPTION OF AUDIO (audio to text) and TRANSLATION (if audio is in another language it is converted to english)
 
-<p align="center">
   <img src="assets/screenshot-audio-analysis.png" width="800">
 </p>
 
-
-<p align="center">
   <img src="assets/screenshot-transcription.png" width="800">
-</p>
 
 
 - SYMPTOMS AND DRUGS ARE EXTRACTED
 
-<p align="center">
   <img src="assets/screenshot-transcription.png" width="800">
-</p>
 
 
 - The Output is obtained telling the risk of occurrence of adverse event.
 
-<p align="center">
   <img src="assets/assessment.png" width="800">
-</p>
 
-<p align="center">
   <img src="assets/screenshot-last.png" width="800">
-</p>
 
 
 
