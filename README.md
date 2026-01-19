@@ -2,13 +2,18 @@
 # Team - CodeHolics
 
 
-### Demo Video:
+### Demo Video
 
 A short demo video is available here: 
 
-### Report:
+### Report: 
 
-# link
+### Figma Links ⬇️ 
+ 
+**INFORMATION ARCHITECTURE**: [Architecture Pipeline](https://amity-rabbit-85650432.figma.site/)
+
+**INTERFACE SCREENS**: [Interface](https://quirky-cleat-87990483.figma.site/)
+
 
 ## 🚀 Problem Statement
 Millions of conversations occur daily between patients and nurses or medical agents regarding medical conditions and medications. During these conversations, early indications of adverse medical events (AEs) may be present but often go unnoticed. Failure to detect such events in time can lead to severe health consequences.
@@ -26,6 +31,10 @@ We present an end-to-end AI-powered system that:
 
 
 ## 🧠 System Architecture
+
+<p align="center">
+  <img src="assets/architecture.png" width="800">
+</p>
 
 
 ## ⚙️ Tech Stack
@@ -83,16 +92,6 @@ Features:
 - Human-in-the-loop medical validation
 
 
-### Design & Architecture(With Diagram):
-
-
-
-### Figma Links : 
- 
-**INFORMATION ARCHITECTURE**: [Architecture Pipeline](https://amity-rabbit-85650432.figma.site/)
-
-**INTERFACE SCREENS**: [Interface](https://quirky-cleat-87990483.figma.site/)
-
 ### Data Source:
 - FAERS (FDA Adverse Event Reporting System)
 - We worked on Year: 2021 (Q1–Q4)
@@ -126,35 +125,46 @@ QA Coverage:
 
 - USER INTERFACE
   
+<p align="center">
+  <img src="assets/screenshot-homepage.png" width="800">
+</p>
 
 
+- USER CLICKS ON BROWSE FILES AND SELECT THE AUDIO FILE
+
+<p align="center">
+  <img src="assets/screenshot-upload-audio.png" width="800">
+</p>
 
 
-- USER CLICKS ON BROWSE FILES BUTTON
-  
-  
+- PROCESSING STARTS - TRANSCRIPTION OF AUDIO (audio to text) and TRANSLATION (if audio is in another language it is converted to english)
+
+<p align="center">
+  <img src="assets/screenshot-audio-analysis.png" width="800">
+</p>
 
 
-
-- SELECT THE AUDIO FILE
-
-  
-
-
-
-- PROCESSING STARTS - TRANSCRIPTION OF AUDIO (audio to text) and TRANSLATION (if audio is in anyother language it is converted to english)
-
-
-
+<p align="center">
+  <img src="assets/screenshot-transcription.png" width="800">
+</p>
 
 
 - SYMPTOMS AND DRUGS ARE EXTRACTED
 
-
+<p align="center">
+  <img src="assets/screenshot-transcription.png" width="800">
+</p>
 
 
 - The Output is obtained telling the risk of occurrence of adverse event.
 
+<p align="center">
+  <img src="assets/screenshot-assessment.png" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/screenshot-last.png" width="800">
+</p>
 
 
 
