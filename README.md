@@ -4,9 +4,8 @@
 
 ### Demo Video
 
-A short demo video is available here: 
+A short demo video is available here: [Demo](https://drive.google.com/file/d/1cWhpzrTLWnKfh7PIW7GpG9NZUI_LC5hO/view?usp=sharing)
 
-### Report: 
 
 ### Figma Links ⬇️ 
  
