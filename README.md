@@ -14,6 +14,10 @@ A short demo video is available here: [Demo](https://drive.google.com/file/d/1cW
 **INTERFACE SCREENS**: [Interface](https://quirky-cleat-87990483.figma.site/)
 
 
+### Report :
+[CodeHolics Report](https://drive.google.com/file/d/1kLJSXDBjzpWhFSD9WVy09s22SLSHJOn0/view?usp=sharing)
+
+
 
 ## 🚀 Problem Statement
 Millions of conversations occur daily between patients and nurses or medical agents regarding medical conditions and medications. During these conversations, early indications of adverse medical events (AEs) may be present but often go unnoticed. Failure to detect such events in time can lead to severe health consequences.
